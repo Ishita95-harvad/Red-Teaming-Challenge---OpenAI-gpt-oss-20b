@@ -1,0 +1,17 @@
+red-teaming-hackathon/
+├── data/
+│   ├── resumes.json       # Sample resumes dataset
+│   ├── poisoned_data.csv  # Optional poisoned samples
+├── notebooks/
+│   ├── 1_attack_demo.ipynb   # Prompt injection + bias attack
+│   ├── 2_defense_demo.ipynb  # Multi-agent defense
+├── src/
+│   ├── attack.py          # Attack functions
+│   ├── defense.py         # Defense pipeline
+│   ├── utils.py           # Helpers
+├── results/
+│   ├── attack_results.csv
+│   ├── defense_results.csv
+├── README.md
+├── requirements.txt
+└── diagram.png            # Defense workflow diagram
