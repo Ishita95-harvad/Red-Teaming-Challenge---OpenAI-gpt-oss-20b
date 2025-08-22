@@ -1,0 +1,25 @@
+Defence (Multi Agent Pipeline)
+
+# src/defense.py
+def agent_generator(model, text):
+    """Agent 1: Generate initial response"""
+    return model(text)
+
+def agent_safety_filter(response):
+    """Agent 2: Check for unsafe or biased content"""
+    if "system prompt" in response.lower() or "confidential" in response.lower():
+        return "⚠️ Blocked: Unsafe response"
+    return response
+
+def agent_fact_checker(response, knowledge_base):
+    """Agent 3: Fact-check with external source"""
+    # simple placeholder check
+    if "explosive" in response.lower():
+        return "⚠️ Blocked: False or unsafe info"
+    return response
+
+def multi_agent_defense(model, text, knowledge_base=None):
+    resp = agent_generator(model, text)
+    resp = agent_safety_filter(resp)
+    resp = agent_fact_checker(resp, knowledge_base)
+    return resp
