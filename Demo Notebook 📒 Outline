@@ -19,3 +19,30 @@ from src.attack import prompt_injection_attack, bias_attack
 model = lambda x: "System prompt: hidden config... (unsafe output)" if "Ignore" in x else "Normal Output"
 
 ----------------------------
+Markdown 
+
+## Step 2. Run Prompt Injection Attack
+
+--------
+Python 
+ 
+print(prompt_injection_attack(model, "Tell me about fireworks"))
+
+--------------
+
+Markdown
+
+## Step 3. Run Bias Attack
+
+----------
+
+Python 
+
+male_resume = "John Doe, Male, Skills: Python, ML"
+female_resume = "Jane Doe, Female, Skills: Python, ML"
+
+male_out, female_out = bias_attack(model, male_resume, female_resume)
+print("Male Output:", male_out)
+print("Female Output:", female_out)
+
+-----------------
