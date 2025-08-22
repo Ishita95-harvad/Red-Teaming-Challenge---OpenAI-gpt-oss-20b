@@ -1,0 +1,21 @@
+Demo Notebook 📒 Outline 
+(1attackdemo_outline)
+
+----------------
+
+Markdown 
+
+# Red Teaming Hackathon – Attack Demo
+
+## Step 1. Load model
+
+-------------
+
+Python
+ 
+from src.attack import prompt_injection_attack, bias_attack
+
+# Fake model (replace with LLM API or local)
+model = lambda x: "System prompt: hidden config... (unsafe output)" if "Ignore" in x else "Normal Output"
+
+----------------------------
